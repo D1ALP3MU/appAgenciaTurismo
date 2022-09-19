@@ -18,7 +18,7 @@ import android.widget.Toast;
 
 import java.text.DecimalFormat;
 
-public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener, View.OnClickListener {
     String[] tdestinos = {"Cartagena", "Santa Marta", "San Andrés", "Medellín"};
     String presSelect;
 
@@ -66,6 +66,8 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 nombre.requestFocus(); // Se envía el foco al nombre
             }
         });
+
+        fechaSalida.setOnClickListener(this);
 
         //Evento click del botón calcular
         calcular.setOnClickListener(new View.OnClickListener() {
@@ -144,6 +146,11 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     @Override
     public void onNothingSelected(AdapterView<?> adapterView) {
+
+    }
+
+    @Override
+    public void onClick(View v) {
 
     }
 }
